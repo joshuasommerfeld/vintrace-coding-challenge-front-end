@@ -7,11 +7,19 @@ import config from '../config'
 import theme from '../styles/theme';
 
 import WineDetails from '../Components/WineDetails'
+import IconButton from "../Components/IconButton";
 
 const WineDetailsPageContainer = styled.div`
-  display: block;
+  height: 100%;
+  width: 100%;
+
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `;
+
+const WineDetailsPageHeader = styled.div``
 
 const WineDetailsPage = () => {
   const { lotCode } = useParams();
@@ -39,6 +47,7 @@ const WineDetailsPage = () => {
 
   return (
     <WineDetailsPageContainer>
+      <WineDetailsPageHeader><IconButton iconName="arrowBack" /></WineDetailsPageHeader>
       <WineDetails lot={lotDetails} />
     </WineDetailsPageContainer>
   )

@@ -8,10 +8,12 @@ import {
 } from "react-router-dom";
 
 import WineDetailsPage from "./Pages/WineDetailsPage";
+import theme from "./styles/theme";
 
 const SinglePageAppContainer = styled.div`
   min-height: 100vh;
   min-width: 100vw;
+  background-color: ${theme.background};
 `
 
 function App() {
