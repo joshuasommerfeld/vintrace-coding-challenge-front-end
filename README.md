@@ -4,10 +4,8 @@
 This react project was bootstrapped with create react app.
 
 ## Limitations
-Due to time limitations, I did not build the basic search page.
+Due to time limitations, I did not build the basic search page, nor did I add react tests.
 I also did not get the breakdown to a functional point where you could select other tabs and get refreshed data.
-
-I also have no tests, because I ran out of time.
 Obviously testing the WineDetailsPage would be ideal, as well as the props for each component.
 
 ## Setup
