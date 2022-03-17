@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Vintrace Coding Challenge
+## Joshua Sommerfeld
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This react project was bootstrapped with create react app.
 
-## Available Scripts
+## Limitations
+Due to time limitations, I did not build the basic search page.
+I also did not get the breakdown to a functional point where you could select other tabs and get refreshed data.
 
-In the project directory, you can run:
+I also have no tests, because I ran out of time.
+Obviously testing the WineDetailsPage would be ideal, as well as the props for each component.
 
-### `npm start`
+## Setup
+You'll need node and yarn installed. Use can use `nvm` and the provided `.nvmrc` to set your node version.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To run just the react app:
+```bash
+yarn start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run the react app and server at once:
+```bash
+yarn startAll
+```
 
-### `npm test`
+## Architecture Decision Register
+### File System
+* src
+    * /Components
+        * All atomic components ready for re-use by other pages as required
+    * /Pages
+        * Orchestrators of larger, functional pages. Functionality is tied to pages instead of components.
+        * Any components that are page specific live here too
+    * /styles
+      * Where parameterised style configs can be kept, I'd also have put breakpoints and spacing configuration files here
+    * App.js
+      * Core of the application, routes are managed here
+    * config.js
+      * Standard object with configuration level objects, here just abstracting the hard-coding of the api url
+    * index.css
+      * Basic css foundation
+    * index.js
+      * Standard among create react applications
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Styled Components
+Makes life easy without styles over multiple files, especially with state based styles like in the "Tabs" component.
