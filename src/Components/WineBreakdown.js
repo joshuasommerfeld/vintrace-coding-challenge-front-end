@@ -4,9 +4,7 @@ import P from "prop-types";
 
 import Tabs from "./Tabs";
 
-const WineBreakdownContainer = styled.div`
-
-`;
+const WineBreakdownContainer = styled.div``;
 
 const WineBreakdownListItem = styled.div`
   display: grid;
@@ -23,18 +21,18 @@ const WineBreakdownListItemKey = styled.p`
   font-size: 16px;
   font-weight: 300;
   padding: 0 16px;
-`
+`;
 
 const WineBreakdownListItemValue = styled(WineBreakdownListItemKey)`
   justify-content: end;
-`
+`;
 
 const tabs = [
   'Year',
   'Variety',
   'Region',
   'Year-Variety',
-]
+];
 
 const WineBreakdown = ({ lotBreakdown, breakdownType, onBreakdownChange }) => {
 
@@ -47,7 +45,8 @@ const WineBreakdown = ({ lotBreakdown, breakdownType, onBreakdownChange }) => {
           {breakdown.percentage}
         </WineBreakdownListItemValue>
       </WineBreakdownListItem>
-  ))
+  ));
+
   return (
       <WineBreakdownContainer>
         <Tabs tabs={tabs} selectedTab={breakdownType} onSelect={onBreakdownChange} />
@@ -62,8 +61,8 @@ const WineBreakdown = ({ lotBreakdown, breakdownType, onBreakdownChange }) => {
 
         {breakdownItems}
       </WineBreakdownContainer>
-  )
-}
+  );
+};
 
 WineBreakdown.propTypes = {
   lotBreakdown: P.shape({
@@ -74,6 +73,6 @@ WineBreakdown.propTypes = {
     }))
 
   })
-}
+};
 
-export default WineBreakdown
+export default WineBreakdown;

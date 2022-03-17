@@ -7,6 +7,6 @@ const Icon = ({ iconName }) => {
         {iconMap[iconName]()}
       </div>
   )
-}
+};
 
-export default Icon
+export default Icon;

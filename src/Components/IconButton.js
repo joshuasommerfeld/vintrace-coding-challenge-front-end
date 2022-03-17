@@ -7,7 +7,7 @@ const Button = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-`
+`;
 
 const IconButton = ({ iconName, onClick }) => {
   return (
@@ -15,6 +15,6 @@ const IconButton = ({ iconName, onClick }) => {
         {iconMap[iconName]()}
       </Button>
   )
-}
+};
 
-export default IconButton
+export default IconButton;

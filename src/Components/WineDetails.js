@@ -76,7 +76,7 @@ const WineDetails = ({ lot, }) => {
       </WineDetailsList>
     </WineDetailsContainer>
   )
-}
+};
 
 WineDetails.propTypes = {
   lot: P.shape({
@@ -87,6 +87,6 @@ WineDetails.propTypes = {
     productState: P.string,
     ownerName: P.string
   })
-}
+};
 
-export default WineDetails
+export default WineDetails;

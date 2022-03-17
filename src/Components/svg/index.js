@@ -4,6 +4,6 @@ import Pencil from "./Pencil";
 const iconMap = {
   arrowBack: ArrowBack,
   pencil: Pencil,
-}
+};
 
-export default iconMap
+export default iconMap;

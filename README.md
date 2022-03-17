@@ -11,6 +11,11 @@ Obviously testing the WineDetailsPage would be ideal, as well as the props for e
 ## Setup
 You'll need node and yarn installed. Use can use `nvm` and the provided `.nvmrc` to set your node version.
 
+To install dependencies:
+```bash
+yarn
+```
+
 To run just the react app:
 ```bash
 yarn start

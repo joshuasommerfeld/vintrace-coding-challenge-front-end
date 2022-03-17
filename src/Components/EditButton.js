@@ -13,7 +13,7 @@ const CircleBackground = styled.button`
   cursor: pointer;
   
   margin: auto;
-`
+`;
 
 const EditButton = ({ onClick }) => {
   return (
@@ -21,10 +21,10 @@ const EditButton = ({ onClick }) => {
         <Icon iconName="pencil" />
       </CircleBackground>
   )
-}
+};
 
 EditButton.propTypes = {
   onClick: P.func
-}
+};
 
 export default EditButton;

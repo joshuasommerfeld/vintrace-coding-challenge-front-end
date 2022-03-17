@@ -20,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "startAll": "concurrently \"cd ../server && sh ./gradlew bootRun\" \"yarn start\""
+    "startAll": "concurrently \"cd ../vintrace-coding-challenge-server && sh ./gradlew bootRun\" \"yarn start\""
   },
   "eslintConfig": {
     "extends": [

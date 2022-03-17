@@ -15,7 +15,7 @@ const SinglePageAppWrapper = styled.div`
   min-height: 100vh;
   min-width: 100vw;
   background-color: ${theme.background};
-`
+`;
 
 const WineDetailsPageContainer = styled.div`
   padding-top: 142px;
@@ -28,7 +28,7 @@ const WineDetailsPageContainer = styled.div`
   max-width: 780px;
 `;
 
-const WineDetailsPageHeader = styled.div``
+const WineDetailsPageHeader = styled.div``;
 
 const WineDetailsPage = () => {
   const { lotCode } = useParams();
@@ -40,18 +40,18 @@ const WineDetailsPage = () => {
     fetch(`${config.apiUrl}/wine/${lotCode}`)
         .then(response => response.json())
         .then(setLotDetails)
-  }, [lotCode])
+  }, [lotCode]);
 
   useEffect(() => {
     fetch(`${config.apiUrl}/breakdown/${breakdownType.toLowerCase()}/${lotCode}`)
         .then(response => response.json())
         .then(setLotBreakdownDetails)
-  }, [lotCode, breakdownType])
+  }, [lotCode, breakdownType]);
 
   if(!lotDetails || !lotBreakdownDetails) {
     return (
         <ReactLoading type="cylon" color={theme.highlight} />
-    )
+    );
   }
 
   return (
@@ -67,6 +67,6 @@ const WineDetailsPage = () => {
       </WineDetailsPageContainer>
     </SinglePageAppWrapper>
   )
-}
+};
 
 export default WineDetailsPage;
