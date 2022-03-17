@@ -9,14 +9,22 @@ import theme from '../styles/theme';
 import WineDetails from '../Components/WineDetails'
 import IconButton from "../Components/IconButton";
 
-const WineDetailsPageContainer = styled.div`
-  height: 100%;
-  width: 100%;
+const SinglePageAppWrapper = styled.div`
+  display: block;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: ${theme.background};
+`
 
+const WineDetailsPageContainer = styled.div`
+  padding-top: 142px;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  min-width: 300px;
+  max-width: 780px;
 `;
 
 const WineDetailsPageHeader = styled.div``
@@ -46,10 +54,12 @@ const WineDetailsPage = () => {
   }
 
   return (
-    <WineDetailsPageContainer>
-      <WineDetailsPageHeader><IconButton iconName="arrowBack" /></WineDetailsPageHeader>
-      <WineDetails lot={lotDetails} />
-    </WineDetailsPageContainer>
+    <SinglePageAppWrapper>
+      <WineDetailsPageContainer>
+        <WineDetailsPageHeader><IconButton iconName="arrowBack" /></WineDetailsPageHeader>
+        <WineDetails lot={lotDetails} />
+      </WineDetailsPageContainer>
+    </SinglePageAppWrapper>
   )
 }
 

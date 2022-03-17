@@ -6,6 +6,9 @@ import iconMap from './svg';
 const Button = styled.button`
   background-color: transparent;
   border: none;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const IconButton = ({ iconName, onClick }) => {
