@@ -10,6 +10,7 @@ const CircleBackground = styled.button`
   border: none;
   border-radius: 28px;
   background-color: ${theme.highlight};
+  cursor: pointer;
   
   margin: auto;
 `

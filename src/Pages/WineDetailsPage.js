@@ -8,6 +8,7 @@ import theme from '../styles/theme';
 
 import WineDetails from '../Components/WineDetails'
 import IconButton from "../Components/IconButton";
+import WineBreakdown from "../Components/WineBreakdown";
 
 const SinglePageAppWrapper = styled.div`
   display: block;
@@ -33,7 +34,7 @@ const WineDetailsPage = () => {
   const { lotCode } = useParams();
   const [lotDetails, setLotDetails] = useState();
   const [lotBreakdownDetails, setLotBreakdownDetails] = useState();
-  const [breakdownType, setBreakdownType] = useState("year");
+  const [breakdownType, setBreakdownType] = useState("Year");
 
   useEffect(() => {
     fetch(`${config.apiUrl}/wine/${lotCode}`)
@@ -42,7 +43,7 @@ const WineDetailsPage = () => {
   }, [lotCode])
 
   useEffect(() => {
-    fetch(`${config.apiUrl}/breakdown/${breakdownType}/${lotCode}`)
+    fetch(`${config.apiUrl}/breakdown/${breakdownType.toLowerCase()}/${lotCode}`)
         .then(response => response.json())
         .then(setLotBreakdownDetails)
   }, [lotCode, breakdownType])
@@ -58,6 +59,11 @@ const WineDetailsPage = () => {
       <WineDetailsPageContainer>
         <WineDetailsPageHeader><IconButton iconName="arrowBack" /></WineDetailsPageHeader>
         <WineDetails lot={lotDetails} />
+        <WineBreakdown
+            lotBreakdown={lotBreakdownDetails}
+            breakdownType={breakdownType}
+            onBreakdownChange={setBreakdownType}
+        />
       </WineDetailsPageContainer>
     </SinglePageAppWrapper>
   )
